@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Cursos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- Texto lateral izquierdo -->
+    <ion-item>
+      <ion-label>Cursos que estás llevando</ion-label>
+    </ion-item>
+
+    <!-- Sección de videos -->
+    <div class="videos-grid">
+      <ion-grid>
+        <ion-row>
+          <!-- Cada tarjeta de video -->
+          <ion-col size="6" size-md="4" *ngFor="let video of videos">
+            <div class="video-card">
+              <video [src]="video.src" controls></video>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

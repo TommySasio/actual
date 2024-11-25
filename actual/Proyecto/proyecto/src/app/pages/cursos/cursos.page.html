@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Cursos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <h1>Mis Cursos</h1>
+    <div class="courses-container">
+      
+      <!-- Tarjeta para el curso de JavaScript -->
+      <div class="course-card">
+        <img src="/assets/imagenes/javascript.jpg" alt="Curso de JavaScript" class="course-image">
+        <h2>Curso de JavaScript</h2>
+        <p>Fundamentos de JavaScript</p>
+        <ion-button expand="block" color="warning" class="btn" [routerLink]="['/miscursos']">Ver Detalles</ion-button>
+      </div>
+
+      <!-- Tarjeta para el curso de Desarrollo de Aplicaciones Móviles -->
+      <div class="course-card">
+        <img src="/assets/imagenes/desarrollo-movil.jpg" alt="Desarrollo de Aplicaciones Móviles" class="course-image">
+        <h2>Desarrollo de Aplicaciones Móviles</h2>
+        <p>Crea aplicaciones para iOS y Android</p>
+        <ion-button expand="block" color="warning" class="btn">Ver Detalles</ion-button>
+      </div>
+
+      <!-- Agrega más cursos aquí si es necesario -->
+
+    </div>
+  </div>
+</ion-content>
+

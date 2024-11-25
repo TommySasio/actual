@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo de fondo para que coincida con la página de login */
+ion-content {
+  --background: url('/assets/imagenes/fondo.jpg') no-repeat center center fixed;
+  --background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Estilo del contenedor del formulario, con diseño similar al login */
+.container {
+  background-color: rgba(13, 71, 161, 0.8);
+  border-radius: 15px;
+  padding: 2.5em;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+}
+
+.image-container {
+  margin-bottom: 1em;
+}
+
+.login-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.payment-form {
+  width: 100%;
+}
+
+.input-group {
+  margin-bottom: 1.5em;
+  text-align: left;
+}
+
+label {
+  font-size: 1em;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+ion-input,
+ion-select {
+  width: 100%;
+  padding: 0.8em;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: #333;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+ion-input:focus,
+ion-select:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+.btn-custom {
+  background-color: #ffc107;
+  color: #333;
+  padding: 0.9em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #ffeb3b;
+}
+
+.yape-container {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.yape-qr {
+  width: 150px;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+/* Breakpoints para responsividad en dispositivos móviles */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 1.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    padding: 1.4em;
+    transform: none;
+    top: auto;
+    position: static;
+  }
+  h1 {
+    font-size: 1.5em;
+  }
+  .login-logo {
+    width: 75px;
+    height: 75px;
+  }
+}

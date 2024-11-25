@@ -1,0 +1,118 @@
+/* Estilo general */
+ion-content {
+    --background: url('/assets/imagenes/fondo.jpg') no-repeat center center fixed;
+    --background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    animation: fadeIn 1.5s ease-in-out; /* Animación para entrada */
+  }
+  
+  /* Encabezado */
+  ion-header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  ion-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    transform: translateY(-20px);
+    animation: slideDown 1s ease-out;
+  }
+  
+  /* Texto a la izquierda */
+  aside {
+    text-align: left;
+    position: absolute;
+    top: 8rem; /* Ajuste para que esté más arriba */
+    left: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Sección de videos */
+  main {
+    flex: 1;
+    padding: 10rem 2rem 2rem; /* Mayor margen superior */
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Adaptado a dispositivos móviles */
+    gap: 1rem;
+    margin: auto;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 1s;
+  
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr); /* Tres columnas para tablets y superior */
+    }
+  }
+  
+  .video-card {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
+  video {
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+    border-radius: 8px;
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  

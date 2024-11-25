@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sistema de Pagos</ion-title> <!-- Título de la página -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container"> <!-- Contenedor principal del formulario de pago -->
+    <div class="image-container"> <!-- Contenedor de la imagen/logo -->
+      <img src="assets/imagenes/logo.png.jpg" alt="Logo de la Plataforma" class="login-logo" /> <!-- Logo de la plataforma -->
+    </div>
+    <h1>Realizar Pago</h1> <!-- Encabezado principal de la página -->
+
+    <form class="payment-form" id="paymentForm" (submit)="onSubmit($event)"> <!-- Formulario de pago -->
+      
+      <!-- Campo de Nombre del Titular -->
+      <div class="input-group">
+        <label for="cardholder">Nombre del Titular:</label>
+        <ion-input type="text" id="cardholder" required placeholder="Ingrese el nombre del titular"></ion-input>
+      </div>
+
+      <!-- Campo Número de Tarjeta -->
+      <div class="input-group">
+        <label for="cardnumber">Número de Tarjeta:</label>
+        <ion-input type="text" id="cardnumber" required maxlength="16" placeholder="0000 0000 0000 0000"></ion-input>
+      </div>
+
+      <!-- Campo Fecha de Vencimiento -->
+      <div class="input-group">
+        <label for="expiry">Fecha de Vencimiento:</label>
+        <ion-input [value]="formattedExpiryDate" readonly (click)="toggleCalendar()" placeholder="Selecciona una fecha"></ion-input>
+        <ion-datetime
+          #datetimePicker
+          [hidden]="!calendarVisible"
+          (ionChange)="onDateSelected($event)"
+          display-format="MM/YYYY"
+          min="2024-01"
+          max="2030-12">
+        </ion-datetime>
+      </div>
+
+      <!-- Campo Código CVV -->
+      <div class="input-group">
+        <label for="cvv">Código CVV:</label>
+        <ion-input type="text" id="cvv" required maxlength="3" placeholder="123"></ion-input>
+      </div>
+
+      <!-- Selección de Método de Pago -->
+      <div class="input-group">
+        <label for="payment-method">Método de Pago:</label>
+        <ion-select id="payment-method" required (ionChange)="onPaymentMethodChange($event)">
+          <ion-select-option value="tarjeta">Tarjeta de Crédito/Débito</ion-select-option>
+          <ion-select-option value="billetera">Billetera Digital</ion-select-option>
+          <ion-select-option value="visa">Visa</ion-select-option>
+          <ion-select-option value="yape">Yape</ion-select-option>
+        </ion-select>
+      </div>
+
+      <!-- Botón de Pagar Ahora -->
+      <ion-button type="submit" expand="block" class="btn btn-custom">Pagar Ahora</ion-button>
+    </form>
+
+    <!-- Sección QR de Yape (visible solo si se selecciona Yape) -->
+    <div class="yape-container" id="yape-container" [style.display]="yapeVisible ? 'block' : 'none'">
+      <h2>Pagar con Yape</h2>
+      <p>Escanea el código QR con tu app de Yape para realizar el pago.</p>
+      <img src="assets/imagenes/yape.png.jpeg" alt="Código QR de Yape" class="yape-qr">
+    </div>
+  </div>
+</ion-content>

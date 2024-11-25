@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <div class="image-container">
+      <img src="assets/imagenes/logo.png.jpg" alt="Logo de la Plataforma" class="login-logo" />
+    </div>
+    <h1>Iniciar Sesión</h1>
+    <p>Por favor, inicia sesión para continuar</p>
+    <form [formGroup]="loginForm" (submit)="onSubmit($event)" class="login-form">
+      <div class="input-group">
+        <label for="email" class="form-label">Correo electrónico:</label>
+        <input
+          type="text"
+          id="email"
+          formControlName="email"
+          placeholder="nombre@gmail.com"
+          required
+          class="form-control"
+        />
+        <small *ngIf="email?.hasError('required') && email?.touched" class="error-message">
+          Por favor, ingrese su correo electrónico.
+        </small>
+        <small *ngIf="email?.hasError('email') && email?.touched" class="error-message">
+          Ingrese un correo válido.
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label for="password" class="form-label">Contraseña:</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            placeholder="Contraseña"
+            required
+            class="form-control"
+          />
+          <span
+            class="password-toggle"
+            (mousedown)="showPassword = true"
+            (mouseup)="showPassword = false"
+            (mouseleave)="showPassword = false"
+            (touchstart)="showPassword = true"
+            (touchend)="showPassword = false"
+            tabindex="0"
+            role="button"
+            aria-label="Mostrar contraseña"
+          >
+            👁️
+          </span>
+        </div>
+        <small *ngIf="password?.hasError('required') && password?.touched" class="error-message">
+          Por favor, ingrese su contraseña.
+        </small>
+      </div>
+
+      <button ion-button type="submit" expand="block" class="btn btn-custom">Ingresar</button>
+    </form>
+
+    <div class="register-link">
+      <p>¿No tienes cuenta? 
+        <a routerLink="/registro" class="register-link">Regístrate aquí</a>
+      </p>
+    </div>
+  </div>
+</ion-content>

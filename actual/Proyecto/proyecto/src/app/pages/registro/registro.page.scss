@@ -1,0 +1,260 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos para el contenido principal y la imagen de fondo */
+ion-content {
+  --background: url('/assets/imagenes/fondo_registro.jpg') no-repeat center center;
+  --background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor principal del formulario de registro */
+.container {
+  background-color: rgba(13, 71, 161, 0.8);
+  border-radius: 15px;
+  padding: 2.5em;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.image-container {
+  margin-bottom: 1em;
+}
+
+.login-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+  color: #ccc;
+}
+
+.registro-form {
+  width: 100%;
+}
+
+.input-group {
+  margin-bottom: 1em;
+  text-align: left;
+  position: relative;
+}
+
+.form-label {
+  font-size: 1em;
+  margin-bottom: 0.3em;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.input-wrapper,
+.password-wrapper {
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8em 2.5em 0.8em 0.8em;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: #333;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #ffc107;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.5);
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 1em;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.4em;
+  color: #666;
+}
+
+.password-toggle:hover {
+  color: #333;
+}
+
+.btn-custom {
+  background-color: #ffc107;
+  color: #333;
+  padding: 0.8em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #ffeb3b;
+}
+
+.register-link {
+  margin-top: 1em;
+  font-size: 1em;
+  color: #ffc107;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.error-message {
+  color: #ff4d4d;
+  font-size: 0.9em;
+  position: absolute;
+  bottom: -1.4em;
+  left: 0;
+}
+
+/* Breakpoints Responsivos */
+
+/* Tablets grandes y pequeñas */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 80%;
+    padding: 2em;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+}
+
+/* Phablets y teléfonos grandes (iPhone XR, iPhone 14 Pro Max, Samsung Galaxy S20 Ultra, Galaxy Z Fold 5, etc.) */
+@media (max-width: 768px) {
+  .container {
+    max-width: 85%;
+    padding: 1.8em;
+  }
+
+  .login-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+}
+
+/* Teléfonos de tamaño medio (iPhone 12 Pro, Galaxy S8+, Pixel 7, etc.) */
+@media (max-width: 600px) {
+  .container {
+    max-width: 90%;
+    padding: 1.6em;
+  }
+
+  .login-logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* Teléfonos móviles estándar (iPhone SE, Samsung Galaxy A51/71, etc.) */
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    padding: 1.4em;
+  }
+
+  .login-logo {
+    width: 70px;
+    height: 70px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  .form-control {
+    font-size: 1em;
+    padding: 0.7em 2em 0.7em 0.5em;
+  }
+
+  .btn-custom {
+    font-size: 1em;
+    padding: 0.7em;
+  }
+
+  .password-toggle {
+    font-size: 1.2em;
+    right: 0.75em;
+  }
+}
+
+/* Teléfonos muy pequeños y dispositivos compactos */
+@media (max-width: 360px) {
+  .container {
+    padding: 1.2em;
+    max-width: 98%;
+  }
+
+  .login-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .form-control {
+    font-size: 0.9em;
+    padding: 0.6em 1.8em 0.6em 0.5em;
+  }
+
+  .btn-custom {
+    font-size: 0.9em;
+    padding: 0.6em;
+  }
+
+  .password-toggle {
+    font-size: 1.1em;
+    right: 0.5em;
+  }
+}

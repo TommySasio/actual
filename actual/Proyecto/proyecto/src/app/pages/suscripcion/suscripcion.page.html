@@ -1,0 +1,128 @@
+<!-- Encabezado principal de la página de suscripción -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Suscripción</ion-title> <!-- Título que se muestra en la barra superior -->
+  </ion-toolbar>
+</ion-header>
+
+<!-- Contenido principal de la página -->
+<ion-content>
+  <!-- Contenedor principal con estilo general -->
+  <div class="container">
+    
+    <!-- Sección del encabezado de la suscripción -->
+    <header>
+      <h1>Impulsa tu Carrera con Nuestros Planes</h1> <!-- Título principal de la sección de suscripción -->
+      <p>Elige el plan que mejor se adapte a tus necesidades</p> <!-- Subtítulo con información adicional -->
+    </header>
+
+    <!-- Sección de tarjetas de precios para cada plan de suscripción -->
+    <section class="pricing-section">
+      
+      <!-- Tarjeta para el Plan Básico -->
+      <ion-card class="pricing-card">
+        <ion-card-header>
+          <!-- Título y subtítulo del plan Básico -->
+          <ion-card-title>Básico</ion-card-title>
+          <ion-card-subtitle>Para 1 estudiante</ion-card-subtitle>
+        </ion-card-header>
+        
+        <ion-card-content>
+          <p class="price">S/200</p> <!-- Precio del plan Básico -->
+          
+          <!-- Lista de beneficios del plan Básico -->
+          <ul>
+            <li>✔ Acceso a contenido básico y cursos selectos</li>
+            <li>✔ Certificados digitales</li>
+            <li>✖ English Academy</li>
+            <li>✖ Acceso a eventos y conferencias exclusivas</li>
+          </ul>
+          
+          <!-- Botón que despliega información adicional del plan Básico -->
+          <ion-button expand="block" color="medium" fill="outline" (click)="toggleDropdown('basic')">
+            Más Información
+          </ion-button>
+          <!-- Contenedor de información adicional para el plan Básico, controlado por la propiedad 'activeDropdown' en el TS -->
+          <div class="dropdown-content" *ngIf="activeDropdown === 'basic'">
+            <p>Este plan ofrece acceso limitado a recursos, ideal para comenzar tu aprendizaje.</p>
+          </div>
+          
+          <!-- Botón que redirige a la página de pagos al hacer clic en 'Suscríbete' -->
+          <ion-button expand="block" color="primary" fill="solid" [routerLink]="['/pagos']">
+            Suscríbete a Básico
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Tarjeta para el Plan Avanzado Duo -->
+      <ion-card class="pricing-card">
+        <ion-card-header>
+          <!-- Título y subtítulo del plan Avanzado Duo -->
+          <ion-card-title>Avanzado Duo</ion-card-title>
+          <ion-card-subtitle>Para 2 estudiantes</ion-card-subtitle>
+        </ion-card-header>
+        
+        <ion-card-content>
+          <p class="price">S/350</p> <!-- Precio del plan Avanzado Duo -->
+          
+          <!-- Lista de beneficios del plan Avanzado Duo -->
+          <ul>
+            <li>✔ Acceso a todos los cursos y contenido actualizado</li>
+            <li>✔ Certificados digitales</li>
+            <li>✔ English Academy</li>
+            <li>✖ Acceso a eventos exclusivos</li>
+          </ul>
+          
+          <!-- Botón para desplegar información adicional del plan Avanzado Duo -->
+          <ion-button expand="block" color="medium" fill="outline" (click)="toggleDropdown('advanced')">
+            Más Información
+          </ion-button>
+          <!-- Contenedor de información adicional para el plan Avanzado Duo, controlado por 'activeDropdown' -->
+          <div class="dropdown-content" *ngIf="activeDropdown === 'advanced'">
+            <p>Este plan permite que dos estudiantes accedan a todo el contenido actualizado.</p>
+          </div>
+          
+          <!-- Botón que redirige a la página de pagos -->
+          <ion-button expand="block" color="tertiary" fill="solid" [routerLink]="['/pagos']">
+            Suscríbete a Avanzado Duo
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <!-- Tarjeta para el Plan Expert Grupo -->
+      <ion-card class="pricing-card">
+        <ion-card-header>
+          <!-- Título y subtítulo del plan Expert Grupo -->
+          <ion-card-title>Expert Grupo</ion-card-title>
+          <ion-card-subtitle>Para grupos de hasta 5 estudiantes</ion-card-subtitle>
+        </ion-card-header>
+        
+        <ion-card-content>
+          <p class="price">S/500</p> <!-- Precio del plan Expert Grupo -->
+          
+          <!-- Lista de beneficios del plan Expert Grupo -->
+          <ul>
+            <li>✔ Acceso ilimitado a todos los cursos y contenido premium</li>
+            <li>✔ Certificados digitales avanzados</li>
+            <li>✔ English Academy y Escuela de Startups</li>
+            <li>✔ Acceso a eventos exclusivos como POTENCIA Conf</li>
+          </ul>
+          
+          <!-- Botón que despliega información adicional del plan Expert Grupo -->
+          <ion-button expand="block" color="medium" fill="outline" (click)="toggleDropdown('expert')">
+            Más Información
+          </ion-button>
+          <!-- Contenedor de información adicional para el plan Expert Grupo, controlado por 'activeDropdown' -->
+          <div class="dropdown-content" *ngIf="activeDropdown === 'expert'">
+            <p>Este plan es ideal para grupos de estudio que buscan el máximo aprovechamiento.</p>
+          </div>
+          
+          <!-- Botón que redirige a la página de pagos -->
+          <ion-button expand="block" color="success" fill="solid" [routerLink]="['/pagos']">
+            Suscríbete a Expert Grupo
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </section>
+  </div>
+</ion-content>

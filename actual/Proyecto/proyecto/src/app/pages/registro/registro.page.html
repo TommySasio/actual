@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de Usuario</ion-title> <!-- Título de la página mostrado en la parte superior -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container"> <!-- Contenedor principal del formulario de registro -->
+    
+    <div class="image-container"> <!-- Contenedor para el logo o imagen de la plataforma -->
+      <img src="assets/imagenes/logo.png.jpg" alt="Logo de la Plataforma" class="login-logo" /> <!-- Imagen del logo de la plataforma -->
+    </div>
+    
+    <h1>Registro</h1> <!-- Título principal de la pantalla de registro -->
+    
+    <!-- Formulario de registro, enlazado al FormGroup 'registroForm' en el archivo TS -->
+    <form [formGroup]="registroForm" (submit)="onSubmit($event)" class="registro-form">
+      
+      <!-- Campo para ingresar el nombre del usuario -->
+      <div class="input-group">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          formControlName="nombre" 
+          placeholder="Ingrese su nombre"
+          required
+          class="form-control"
+        />
+        <small *ngIf="nombre?.hasError('required') && nombre?.touched" class="error-message">
+          <!-- Mensaje de error si el campo está vacío y se ha interactuado con él -->
+          Por favor, ingrese su nombre.
+        </small>
+      </div>
+
+      <!-- Campo para ingresar el apellido del usuario -->
+      <div class="input-group">
+        <label for="apellido" class="form-label">Apellido:</label>
+        <input
+          type="text"
+          id="apellido"
+          formControlName="apellido" 
+          placeholder="Ingrese su apellido"
+          required
+          class="form-control"
+        />
+        <small *ngIf="apellido?.hasError('required') && apellido?.touched" class="error-message">
+          Por favor, ingrese su apellido.
+        </small>
+      </div>
+
+      <!-- Campo para ingresar el nombre de usuario -->
+      <div class="input-group">
+        <label for="usuario" class="form-label">Usuario:</label>
+        <input
+          type="text"
+          id="usuario"
+          formControlName="usuario" 
+          placeholder="Ingrese su usuario"
+          required
+          class="form-control"
+        />
+        <small *ngIf="usuario?.hasError('required') && usuario?.touched" class="error-message">
+          Por favor, ingrese su nombre de usuario.
+        </small>
+      </div>
+
+      <!-- Campo para ingresar el correo electrónico del usuario -->
+      <div class="input-group">
+        <label for="email" class="form-label">Correo electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email" 
+          placeholder="nombre@gmail.com"
+          required
+          class="form-control"
+        />
+        <!-- Mensajes de error para el correo, cuando falta o tiene un patrón incorrecto -->
+        <small *ngIf="email?.hasError('required') && email?.touched" class="error-message">
+          Por favor, ingrese su correo electrónico.
+        </small>
+        <small *ngIf="email?.hasError('pattern') && email?.touched" class="error-message">
+          Ingrese un correo válido.
+        </small>
+      </div>
+
+      <!-- Campo para ingresar la contraseña con opción de mostrar/ocultar -->
+      <div class="input-group">
+        <label for="password" class="form-label">Contraseña:</label>
+        <div class="password-wrapper">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            formControlName="password" 
+            placeholder="Ingrese su contraseña"
+            required
+            class="form-control"
+          />
+          <!-- Icono para mostrar/ocultar la contraseña -->
+          <span
+            class="password-toggle"
+            (mousedown)="showPassword = true" 
+            (mouseup)="showPassword = false" 
+            (mouseleave)="showPassword = false"
+            (touchstart)="showPassword = true" 
+            (touchend)="showPassword = false"
+            tabindex="0"
+            role="button"
+            aria-label="Mostrar contraseña"
+          >
+            👁️
+          </span>
+        </div>
+        <small *ngIf="password?.hasError('required') && password?.touched" class="error-message">
+          Por favor, ingrese su contraseña.
+        </small>
+      </div>
+
+      <!-- Campo para ingresar la fecha de nacimiento del usuario -->
+      <div class="input-group">
+        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento:</label>
+        <input
+          type="date"
+          id="fechaNacimiento"
+          formControlName="fechaNacimiento" 
+          required
+          class="form-control"
+        />
+        <small *ngIf="fechaNacimiento?.hasError('required') && fechaNacimiento?.touched" class="error-message">
+          Por favor, ingrese su fecha de nacimiento.
+        </small>
+      </div>
+
+      <!-- Campo para ingresar el número de teléfono del usuario -->
+      <div class="input-group">
+        <label for="telefono" class="form-label">Teléfono:</label>
+        <input
+          type="tel"
+          id="telefono"
+          formControlName="telefono" 
+          placeholder="Ingrese su número de teléfono"
+          required
+          class="form-control"
+        />
+        <small *ngIf="telefono?.hasError('required') && telefono?.touched" class="error-message">
+          Por favor, ingrese su número de teléfono.
+        </small>
+      </div>
+
+      <!-- Campo para ingresar la dirección del usuario -->
+      <div class="input-group">
+        <label for="direccion" class="form-label">Dirección:</label>
+        <input
+          type="text"
+          id="direccion"
+          formControlName="direccion"
+          placeholder="Ingrese su dirección"
+          required
+          class="form-control"
+        />
+        <small *ngIf="direccion?.hasError('required') && direccion?.touched" class="error-message">
+          Por favor, ingrese su dirección.
+        </small>
+      </div>
+
+      <!-- Botón de envío del formulario -->
+      <button ion-button type="submit" expand="block" class="btn btn-custom">Registrarse</button>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ion-content {
+  --background: url('/assets/imagenes/R.jpg') no-repeat center center fixed;
+  --background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: rgba(13, 71, 161, 0.8);
+  border-radius: 15px;
+  padding: 2.5em;
+  width: 90%;
+  max-width: 500px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.image-container {
+  margin-bottom: 1em;
+}
+
+.login-logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+  color: #ccc;
+}
+
+.btn-custom {
+  background-color: #ffc107;
+  color: #333;
+  padding: 0.9em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #ffeb3b;
+}
+
+/* Ajustes Responsivos */
+
+/* Tablets y dispositivos pequeños */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 80%;
+    padding: 2em;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 85%;
+    padding: 1.8em;
+  }
+
+  .login-logo {
+    max-width: 250px;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    padding: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); /* Centrado vertical en dispositivos móviles */
+  }
+
+  .login-logo {
+    max-width: 220px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+}

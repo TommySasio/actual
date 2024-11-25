@@ -1,0 +1,204 @@
+/* Restablecimiento de margen, padding y box-sizing para todos los elementos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales para el contenido principal de la página */
+ion-content {
+  --background: url('/assets/imagenes/fondo.jpg') no-repeat center center fixed; /* Imagen de fondo fija */
+  --background-size: cover; /* Ajusta el tamaño del fondo para cubrir toda la pantalla */
+  display: flex;
+  align-items: center; /* Centra verticalmente el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido */
+  min-height: 100vh; /* Altura mínima de la pantalla completa */
+}
+
+/* Contenedor principal de la página de suscripción */
+.container {
+  background-color: rgba(13, 71, 161, 0.8); /* Fondo semitransparente */
+  border-radius: 15px; /* Esquinas redondeadas */
+  padding: 2.5em;
+  width: 90%;
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+  color: white; /* Color de texto blanco */
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra en el contenedor */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  margin: auto;
+  transform: translateY(-50%); /* Centra el contenedor verticalmente */
+  position: relative;
+  top: 50%;
+}
+
+/* Estilo para el encabezado de la página */
+header {
+  margin-bottom: 20px;
+}
+
+/* Título principal */
+h1 {
+  font-size: 2em;
+  color: #ffffff;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+/* Subtítulo o párrafo */
+p {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+  color: #ccc; /* Color de texto gris claro */
+}
+
+/* Contenedor de las tarjetas de precios */
+.pricing-section {
+  display: flex;
+  justify-content: space-around; /* Espacia las tarjetas equitativamente */
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten a nuevas líneas si es necesario */
+  width: 100%;
+  gap: 20px; /* Espacio entre tarjetas */
+}
+
+/* Estilos de cada tarjeta de suscripción */
+.pricing-card {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px;
+  border-radius: 10px; /* Esquinas redondeadas */
+  width: 100%;
+  max-width: 280px; /* Ancho máximo de cada tarjeta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación suave al pasar el mouse */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+/* Efecto al pasar el mouse sobre la tarjeta */
+.pricing-card:hover {
+  transform: translateY(-8px); /* Desplaza ligeramente hacia arriba */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Incrementa la sombra */
+}
+
+/* Estilos para el precio */
+.price {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #3880ff; /* Color azul */
+}
+
+/* Estilo para el botón de suscripción */
+.subscribe-button {
+  --background: #3880ff;
+  --color: #ffffff;
+  width: 100%; /* Botón de ancho completo */
+  border-radius: 6px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+/* Estilos para diferentes tamaños de pantalla */
+
+/* Tablets grandes y pequeñas */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 90%;
+    padding: 2em;
+  }
+
+  h1 {
+    font-size: 1.8em; /* Reduce el tamaño del título */
+  }
+}
+
+/* Phablets y teléfonos grandes */
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 1.8em;
+  }
+
+  .pricing-section {
+    flex-direction: column; /* Las tarjetas se apilan verticalmente */
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.6em; /* Ajusta el tamaño del título */
+  }
+}
+
+/* Teléfonos de tamaño medio */
+@media (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding: 1.6em;
+    top: 0;
+    transform: translateY(0); /* Centra mejor en móviles */
+  }
+
+  .pricing-card {
+    max-width: 90%; /* Ajusta el ancho de la tarjeta para centrarse mejor en la pantalla */
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+/* Teléfonos móviles estándar */
+@media (max-width: 480px) {
+  .container {
+    padding: 1.4em;
+    max-width: 100%;
+    top: 0;
+    transform: translateY(0); /* Evita un desplazamiento excesivo en pantallas pequeñas */
+  }
+
+  .pricing-card {
+    width: 100%;
+    max-width: 90%;
+    padding: 15px;
+    margin-bottom: 1em; /* Añadir espacio entre tarjetas */
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+}
+
+/* Teléfonos muy pequeños */
+@media (max-width: 360px) {
+  .container {
+    padding: 1.2em;
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .pricing-card {
+    max-width: 90%;
+    padding: 10px;
+  }
+}
+
+/* Estilos para el contenido desplegable de información adicional */
+.dropdown-content {
+  margin-top: 1em; /* Espacio sobre el contenido desplegable */
+  padding: 1em;
+  background-color: #f1f1f1; /* Fondo gris claro */
+  color: #333; /* Texto oscuro */
+  border-radius: 10px; /* Esquinas redondeadas */
+  text-align: left;
+  font-size: 0.9em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Animación de entrada/salida */
+  opacity: 1; /* Hace visible el contenido desplegable */
+}

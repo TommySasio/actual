@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile-container">
+    <!-- Foto de perfil y Nombre del Usuario -->
+    <div class="profile-header">
+      <img src="assets/imagenes/logo.png.jpg" alt="Foto de perfil" class="profile-photo" />
+      <h2>{{ usuario.nombre }}</h2>
+      <p>{{ usuario.email }}</p>
+      <ion-button expand="block" color="primary" (click)="editarPerfil()">Editar Perfil</ion-button>
+    </div>
+
+    <!-- Información de Contacto -->
+    <div class="profile-info">
+      <h3>Información Personal</h3>
+      <p><strong>Teléfono:</strong> {{ usuario.telefono }}</p>
+      <p><strong>Dirección:</strong> {{ usuario.direccion }}</p>
+      <p><strong>País:</strong> {{ usuario.pais }}</p>
+      <p><strong>Ciudad:</strong> {{ usuario.ciudad }}</p>
+      <p><strong>Gustos:</strong> {{ usuario.gustos }}</p>
+    </div>
+
+    <!-- Preferencias -->
+    <div class="settings">
+      <h3>Preferencias</h3>
+      <ion-item>
+        <ion-label>Notificaciones</ion-label>
+        <ion-toggle [(ngModel)]="notificaciones"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Modo oscuro</ion-label>
+        <ion-toggle [(ngModel)]="modoOscuro" (ionChange)="toggleModoOscuro()"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label>Red Social Vinculada</ion-label>
+        <p>{{ usuario.redSocial }}</p>
+      </ion-item>
+    </div>
+
+    <!-- Suscripción y Métodos de Pago -->
+    <div class="subscription-payment">
+      <h3>Suscripción y Métodos de Pago</h3>
+      <p><strong>Estado de Suscripción:</strong> {{ usuario.suscripcion ? 'Activa' : 'Inactiva' }}</p>
+      <ion-button expand="block" color="secondary" (click)="cambiarSuscripcion()">
+        {{ usuario.suscripcion ? 'Cancelar Suscripción' : 'Activar Suscripción' }}
+      </ion-button>
+      <p><strong>Método de Pago:</strong> {{ usuario.metodoPago }}</p>
+      <ion-button expand="block" color="tertiary" (click)="cambiarMetodoPago()">Cambiar Método de Pago</ion-button>
+    </div>
+
+    <!-- Certificados Obtenidos -->
+    <div class="certificates">
+      <h3>Certificados Obtenidos</h3>
+      <ion-list>
+        <ion-item *ngFor="let certificado of usuario.certificados">
+          <ion-label>{{ certificado }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <!-- Botón de Cerrar Sesión -->
+    <ion-button expand="block" color="danger" (click)="cerrarSesion()">Cerrar Sesión</ion-button>
+  </div>
+</ion-content>
